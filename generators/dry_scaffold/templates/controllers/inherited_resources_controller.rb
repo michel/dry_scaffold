@@ -13,7 +13,7 @@ class <%= controller_class_name %>Controller < InheritedResources::Base
   end
   
 <% end -%>
-<% if options[:pagination] -%>
+<% if options[:pagination] && !options[:search] -%>
   protected
     
     def collection
@@ -22,5 +22,15 @@ class <%= controller_class_name %>Controller < InheritedResources::Base
       paginate_options[:per_page] ||= (params[:per_page] || 20)
       @<%= model_plural_name %> ||= end_of_association_chain.paginate(paginate_options)
     end
-<% end %>        
+<% end %>
+
+<% if options[:search]  -%>
+  protected
+    
+    def collection
+      @search = end_of_association_chain.search(params[:search])
+      @<%= model_plural_name %>  = @search.paginate(:page => params[:page])
+    end
+<% end %>
+        
 end

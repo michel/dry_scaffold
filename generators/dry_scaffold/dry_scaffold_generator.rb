@@ -10,7 +10,8 @@ class DryScaffoldGenerator < DryGenerator
       DryModelGenerator::BANNER_ARGS
     ].freeze
   BANNER_OPTIONS = [
-      "[--skip-pagination]",
+      "[--skip-pagination]",   
+      "[--skip-search]",      
       "[--skip-resourceful]",
       "[--skip-formtastic]",
       "[--skip-views]",
@@ -343,6 +344,11 @@ class DryScaffoldGenerator < DryGenerator
       opt.on('--skip-pagination',
         "Controller/View: Skip 'will_paginate' for collections in controllers and views. Requires gem 'mislav-will_paginate'.") do |v|
         options[:pagination] = !v
+      end
+
+      opt.on('--skip-search',
+        "Controller/View: Skip 'searchlogic' for collections in controllers and views. Requires gem 'searchlogic'.") do |v|
+        options[:search] = !v
       end
       
       opt.on('--skip-formtastic',

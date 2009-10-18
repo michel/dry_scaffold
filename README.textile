@@ -52,7 +52,8 @@ The most characteristic features:
 * Collection pagination using will_paginate by default. Note: Can be turned off.
 * Optionally specify what actions/views to generate (stubs for specified REST-actions will be generated).
 * Optionally specify what respond_to-formats to generate (stubs for the most common respond_to-formats will be generated).
-* Generates default helpers/models/migrations, and REST-routes (if not already defined).
+* Generates default helpers/models/migrations, and REST-routes (if not already defined).  
+* Generates default search using searchlogic
 
 h3. Formtastic Forms
 
@@ -214,14 +215,18 @@ Get the gems...you want:
 <pre>sudo gem install haml
 sudo gem install mislav-will_paginate
 sudo gem install justinfrench-formtastic
-sudo gem install josevalim-inherited_resources</pre>
+sudo gem install josevalim-inherited_resources
+sudo gem install searchlogic
+</pre>
 
 ...and same for the config config: @config/environments/development.rb@
 
 <pre>config.gem 'haml'
 config.gem 'will_paginate'
 config.gem 'justinfrench-formtastic', :lib => 'formtastic', :source => 'http://gems.github.com'
-config.gem 'josevalim-inherited_resources', :lib => 'inherited_resources', :source => 'http://gems.github.com'</pre>
+config.gem 'josevalim-inherited_resources', :lib => 'inherited_resources', :source => 'http://gems.github.com'
+config.gem 'binarylogic-searchlogic', :source => 'http://gems.github.com'
+</pre>
 
 Also configure @config/environments/test.rb@ with the RSpec library if you want to
 

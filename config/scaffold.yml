@@ -6,7 +6,8 @@ dry_scaffold:
   options:
     formtastic: true
     resourceful: true
-    pagination: true
+    search: true
+    pagination: true    
     layout: false
     views: true
     helpers: true

@@ -4,7 +4,9 @@ class DryGenerator < Rails::Generator::NamedBase
   HAS_FORMTASTIC =            defined?(Formtastic)
   HAS_INHERITED_RESOURCES =   defined?(InheritedResources)
   HAS_SHOULDA =               defined?(Shoulda)
-  HAS_RSPEC =                 defined?(Rspec)
+  HAS_RSPEC =                 defined?(Rspec) 
+  HAS_WILL_SEARCHLOGIC =      defined?(Searchlogic)
+  
   
   # Load defaults from config file - default or custom.
   begin
@@ -38,7 +40,8 @@ class DryGenerator < Rails::Generator::NamedBase
   DEFAULT_OPTIONS = {
       :resourceful      => CONFIG_OPTIONS['resourceful']  || HAS_INHERITED_RESOURCES,
       :formtastic       => CONFIG_OPTIONS['formtastic']   || HAS_FORMTASTIC,
-      :pagination       => CONFIG_OPTIONS['pagination']   || HAS_WILL_PAGINATE,
+      :pagination       => CONFIG_OPTIONS['pagination']   || HAS_WILL_PAGINATE, 
+      :search           => CONFIG_OPTIONS['search']       || HAS_WILL_SEARCHLOGIC,    
       :skip_tests       => !CONFIG_OPTIONS['tests']       || false,
       :skip_controller_tests => !CONFIG_OPTIONS['controller_tests']       || false,
       :skip_helpers     => !CONFIG_OPTIONS['helpers']     || false,

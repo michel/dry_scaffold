@@ -4,7 +4,7 @@ require 'rake/rdoctask'
 
 NAME = "michel-dry_scaffold"
 SUMMARY = %Q{A DRYer scaffold generator for Rails. Generates dry semantic and standards compliant views, and dry RESTful controllers.}
-HOMEPAGE = "http://github.com/grimen/#{NAME}/tree/master"
+HOMEPAGE = "http://github.com/michel/#{NAME}/tree/master"
 AUTHOR = "Jonas Grimfelt,Michel de Graaf"
 EMAIL = "grimen@gmail.com, michel@re-invention.nl"
 SUPPORT_FILES = %w(README.textile TODO.textile CHANGELOG.textile)
